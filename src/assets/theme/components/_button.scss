@@ -3,3 +3,9 @@
 .mat-flat-button {
   border-radius: 0 !important;
 }
+
+html.dark {
+  .mat-stroked-button:not(.mat-button-disabled) {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}

@@ -2,7 +2,7 @@
   &__container {
     padding: 0 1rem;
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 750px) {
       flex-direction: column;
     }
   }
@@ -15,18 +15,22 @@
     width: fit-content;
     padding-right: 5rem;
     margin-right: 5rem;
-    border-right: 1px solid var(--accent);
+    border-right: 1px solid var(--text-light);
     color: var(--accent);
 
     @media screen and (max-width: 800px) {
       font-size: 13rem;
     }
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 359px) {
+      font-size: 10rem;
+    }
+
+    @media screen and (max-width: 750px) {
       padding-right: 0;
       margin-right: 0;
       border-right: unset;
-      border-bottom: 1px solid var(--accent);
+      border-bottom: 1px solid var(--text-light);
       margin-bottom: 5rem;
       padding-bottom: 3rem;
       align-items: flex-start;
@@ -35,16 +39,20 @@
 
   &__message {
     font-size: 1.7rem;
-    color: var(--accent);
+    color: var(--text-light);
     width: 250px;
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 750px) {
       text-align: center;
+    }
+
+    @media screen and (max-width: 359px) {
+      font-size: 1.4rem;
     }
   }
 
   &__button {
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 750px) {
       width: 100%;
     }
   }
