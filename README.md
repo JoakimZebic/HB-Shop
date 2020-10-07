@@ -6,6 +6,7 @@ Static web shop that renders products from .json file
 ## About
 
 • Designed and coded by me in *only 2 days*.
+
 (LOL , I know, I am responsible student xD)
 
 • Supports English and Serbian language
