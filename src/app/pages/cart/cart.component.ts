@@ -89,5 +89,6 @@ export class CartComponent implements OnInit {
     this.lcs.delete('cart');
     this.totalSum = 0;
     this.buyForm.reset();
+    this.counterService.counter = 0;
   }
 }

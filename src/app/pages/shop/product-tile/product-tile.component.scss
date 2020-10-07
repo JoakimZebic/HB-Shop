@@ -18,6 +18,7 @@
       h3 {
         font-size: 3.5rem;
         color: var(--text);
+        line-height: 1.2;
       }
 
       span {
@@ -52,40 +53,52 @@
         color: var(--accent-contrast);
       }
 
-      &:hover {
-        width: 20rem;
-        background-color: var(--accent);
-        color: var(--accent-contrast);
+      @media screen and (hover: hover) {
+        &:hover {
+          width: 20rem;
+          background-color: var(--accent);
+          color: var(--accent-contrast);
 
-        span {
-          width: 10rem;
-          opacity: 1;
-          font-size: 1.4rem;
+          span {
+            width: 10rem;
+            opacity: 1;
+            font-size: 1.4rem;
+          }
         }
       }
 
       &::after {
         position: absolute;
         content: '';
-        width: 20rem;
-        height: 6rem;
+        width: 8rem;
+        height: 8rem;
         border-radius: 8rem;
         border: 1rem solid rgba(var(--accent-rgb), 0);
         top: 50%;
         left: 50%;
         opacity: 1;
         transform: translate(-50%, -50%);
+
+        @media screen and (hover: hover) {
+          width: 20rem;
+          height: 6rem;
+        }
       }
 
       &.clicked {
         pointer-events: none;
 
         &::after {
-          width: 20rem;
-          height: 6rem;
+          width: 8rem;
+          height: 8rem;
           opacity: 0;
           border: 4rem solid rgba(var(--accent-rgb), 0.3);
           transition: width 0.4s, height 0.4s, opacity 0.4s, border-width 0.4s;
+
+          @media screen and (hover: hover) {
+            width: 20rem;
+            height: 6rem;
+          }
         }
       }
     }
@@ -117,7 +130,7 @@
     &--content {
       background: var(--surface-light);
       max-height: 90vh;
-      width: 80%;
+      width: 95%;
       max-width: 60rem;
       box-shadow: 0rem 0rem 2.5rem rgba(var(--shadow), 0.6);
 
@@ -128,19 +141,35 @@
       .img-container {
         height: 40rem;
         box-shadow: 0 5px 10px rgba(var(--shadow), 0.3);
+
+        @media screen and (max-height: 850px) {
+          height: 40%;
+        }
       }
 
       .text-container {
         height: calc(100% - 40rem);
 
+        @media screen and (max-height: 850px) {
+          height: 60%;
+        }
+
         &__scroll {
           h3 {
             font-size: 3.5rem;
+
+            @media screen and (max-width: 500px) {
+              font-size: 2.5rem;
+            }
           }
 
           .price {
             font-size: 1.8rem;
             color: var(--text-light);
+
+            @media screen and (max-width: 500px) {
+              font-size: 1.6rem;
+            }
 
             b {
               color: var(--text);
@@ -149,6 +178,10 @@
 
           .description {
             font-size: 1.8rem;
+
+            @media screen and (max-width: 500px) {
+              font-size: 1.6rem;
+            }
 
             &.text {
               color: var(--text-light);

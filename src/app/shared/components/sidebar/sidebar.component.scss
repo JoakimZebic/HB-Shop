@@ -28,6 +28,7 @@
     h1 {
       font-size: 5rem;
       color: var(--text);
+      line-height: 1;
     }
 
     h3 {
@@ -37,6 +38,40 @@
 
     p {
       color: var(--text-light);
+    }
+
+    @media screen and (max-width: 1200px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h3 {
+        font-size: 1.7rem;
+      }
+    }
+
+    @media screen and (max-width: 1050px) {
+      h1 {
+        font-size: 5.5rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h3 {
+        font-size: 1.7rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -59,6 +94,21 @@
         text-decoration: underline;
       }
     }
+
+    @media screen and (max-width: 500px) {
+      transform: unset;
+    }
+
+    @media screen and (max-width: 400px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__controls {
+    @media screen and (max-width: 400px) {
+      align-items: flex-end;
+    }
   }
 
   .cart-button {
@@ -66,6 +116,22 @@
     height: 15rem;
     left: -10rem;
     transition: 0.5s;
+
+    @media screen and (max-width: 1050px) {
+      width: 15rem;
+      height: 10rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -10rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 13rem;
+      height: 9rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -9rem;
+    }
 
     &--button {
       clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -83,6 +149,15 @@
           calc(var(--accent-saturation) * 1%),
           calc((var(--accent-luminosity) - 10) * 1%)
         );
+      }
+
+      @media screen and (max-width: 1050px) {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+
+        .mat-icon {
+          margin-right: 0;
+          margin-top: -2.5rem;
+        }
       }
     }
 
@@ -103,9 +178,30 @@
   &.collapsed {
     padding: 3rem 2rem;
 
+    @media screen and (max-width: 1050px) {
+      flex-direction: row;
+    }
+
     .cart-button {
       left: 0;
       transition: 0.5s all, 0.5s 0.5s left;
+
+      @media screen and (max-width: 1050px) {
+        left: 50%;
+        top: 0;
+        transition: 0.5s all, 0.5s 0.5s top;
+
+        &--counter {
+          left: 11rem;
+          top: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        &--counter {
+          left: 9rem;
+        }
+      }
     }
 
     .hb-sidebar__logo {
@@ -116,6 +212,57 @@
           width: 3.5rem;
           height: 3.5rem;
           font-size: 1.2rem;
+        }
+      }
+
+      &-container {
+        @media screen and (max-width: 1050px) {
+          height: 100%;
+          width: 3.5rem;
+        }
+      }
+    }
+
+    .hb-sidebar__controls {
+      @media screen and (max-width: 1050px) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+
+        .theme-holder {
+          width: auto;
+        }
+
+        .lang-holder {
+          flex-wrap: nowrap;
+
+          .lang-link {
+            &:first-of-type {
+              margin: 0;
+            }
+
+            &:last-of-type {
+              margin: 0 1.5rem;
+            }
+          }
+        }
+
+        .social {
+          order: unset;
+        }
+      }
+
+      @media screen and (max-width: 359px) {
+        .theme-holder {
+          display: none;
+        }
+
+        .lang-holder {
+          .lang-link {
+            &:last-of-type {
+              margin: 0 0 0 1.5rem;
+            }
+          }
         }
       }
     }

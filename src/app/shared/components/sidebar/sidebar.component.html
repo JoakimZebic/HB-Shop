@@ -2,7 +2,7 @@
   class="hb-sidebar w-100 h-100 d-flex flex-column jc-between relative z-5 p-9 transition05"
   [class.collapsed]="!isWelcomePage"
 >
-  <div class="w-100 d-flex ali-center jc-center">
+  <div class="hb-sidebar__logo-container w-100 d-flex ali-center jc-center">
     <div class="hb-sidebar__logo transition05">
       <a href="/#/welcome">
         <h1
@@ -24,14 +24,16 @@
     </div>
   </div>
 
-  <div class="w-100 d-flex ali-center jc-between flex-wrap">
-    <div class="w-100">
+  <div
+    class="hb-sidebar__controls w-100 d-flex ali-center jc-between flex-wrap"
+  >
+    <div class="theme-holder w-100">
       <hb-theme-switch
         [style]="!isWelcomePage ? 'padding: 0; margin: auto' : ''"
       ></hb-theme-switch>
     </div>
 
-    <div class="d-flex" [class.flex-wrap]="!isWelcomePage">
+    <div class="lang-holder d-flex" [class.flex-wrap]="!isWelcomePage">
       <div
         *ngFor="let lang of languages"
         class="lang-link mr-3 pointer transition05"
@@ -55,7 +57,7 @@
   <div class="cart-button absolute top-50 center-absolute-y">
     <span
       *ngIf="cartCounter"
-      class="cart-button--counter d-flex ali-center jc-center absolute top-0 px-3 z-2"
+      class="cart-button--counter d-flex ali-center jc-center absolute top-0 px-3 z-2 pe-none"
       [class.bounce]="bounceCounter"
       >{{ cartCounter }}</span
     >

@@ -1,4 +1,16 @@
 .hb-welcome {
+  &--container {
+    @media screen and (max-width: 1050px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .square1 {
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+  }
+
   &__carousel {
     background-color: var(--primary);
   }
@@ -21,9 +33,17 @@
       }
     }
 
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+
     h4 {
       font-size: 5rem;
       line-height: 1;
+
+      @media screen and (max-width: 1200px) {
+        font-size: 3.5rem;
+      }
     }
 
     p {

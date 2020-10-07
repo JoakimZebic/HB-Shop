@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Bag 1",
+    "name": "Bag 1 Bag 2 Bag 3 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "img": "../../../assets/images/bag1.jpg",
     "price": 5000,
     "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"

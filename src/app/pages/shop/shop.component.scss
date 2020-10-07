@@ -13,6 +13,20 @@
       color: var(--text);
     }
   }
+
+  .tile-wrapper {
+    @media screen and (max-width: 1400px) {
+      width: 33.33%;
+    }
+
+    @media screen and (max-width: 950px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
+  }
 }
 
 @keyframes rotate {

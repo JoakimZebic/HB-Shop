@@ -1,9 +1,11 @@
 <div
   class="hb-shop h-100 w-100 overflow-hidden-x overflow-auto-y d-flex flex-wrap"
 >
-  <div *ngFor="let product of products" class="w-25">
-    <hb-product-tile [product]="product"></hb-product-tile>
-  </div>
+  <ng-container *ngIf="!isLoading">
+    <div *ngFor="let product of products" class="tile-wrapper w-25">
+      <hb-product-tile [product]="product"></hb-product-tile>
+    </div>
+  </ng-container>
 
   <div
     *ngIf="isLoading"

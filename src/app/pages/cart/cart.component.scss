@@ -1,6 +1,29 @@
 .hb-cart {
   align-content: flex-start;
 
+  @media screen and (max-width: 1400px) {
+    padding: 10rem 5rem;
+    overflow: auto;
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding: 5rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 5rem 3rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 5rem 1.5rem;
+  }
+
+  &--container {
+    @media screen and (max-width: 1250px) {
+      flex-direction: column;
+    }
+  }
+
   &__title {
     h1 {
       font-size: 3rem;
@@ -8,17 +31,86 @@
   }
 
   &__items {
+    max-height: 65rem;
+
+    @media screen and (max-width: 1250px) {
+      width: 100%;
+      max-height: unset;
+    }
+
     &--item {
       background-color: var(--surface-light);
       box-shadow: 0.3rem 0.3rem 0.6rem rgba(var(--shadow), 0.1);
 
+      @media screen and (max-width: 550px) {
+        position: relative;
+      }
+
       .img-container {
         width: 8rem;
         height: 8rem;
+        min-width: 8rem;
+
+        @media screen and (max-width: 550px) {
+          width: 9rem;
+          height: 9rem;
+          min-width: 9rem;
+        }
+      }
+
+      .info-container {
+        @media screen and (max-width: 550px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      .name {
+        -webkit-line-clamp: 1;
+
+        @media screen and (max-width: 550px) {
+          width: 100%;
+        }
       }
 
       .price {
         color: var(--text-light);
+
+        @media screen and (max-width: 550px) {
+          width: 100%;
+          text-align: left;
+          margin-top: 1rem;
+        }
+      }
+
+      .remove-btn {
+        @media screen and (max-width: 450px) {
+          border-radius: 0 !important;
+          position: absolute;
+          width: 0;
+          height: 100%;
+          background: rgba(var(--error-rgb), 0.7);
+          opacity: 0;
+          transition: 0.5s;
+          pointer-events: none;
+          margin: 0;
+          right: 0;
+
+          .mat-icon {
+            font-size: 4rem;
+            width: 4rem;
+            color: var(--error-contrast);
+          }
+        }
+      }
+
+      &:hover {
+        .remove-btn {
+          @media screen and (max-width: 450px) {
+            opacity: 1;
+            pointer-events: all;
+            width: 100%;
+          }
+        }
       }
     }
 
@@ -34,8 +126,36 @@
   }
 
   &__form {
+    @media screen and (max-width: 1250px) {
+      width: 100%;
+      margin-top: 3rem;
+      min-height: 65rem;
+    }
+
+    .name-field {
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+    }
+
     &--total {
       font-size: 3rem;
+
+      @media screen and (max-width: 1250px) {
+        margin-bottom: 1rem;
+      }
+
+      @media screen and (max-width: 900px) {
+        font-size: 2.3rem;
+      }
+
+      @media screen and (max-width: 550px) {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 1.7rem;
+      }
 
       span {
         color: var(--text-light);
@@ -45,6 +165,10 @@
     .bullets {
       font-size: 1.6rem;
       color: var(--text-light);
+
+      @media screen and (max-width: 450px) {
+        font-size: 1.4rem;
+      }
 
       p {
         margin: 1.5rem 0;
@@ -62,6 +186,15 @@
 
     .checkout-btn {
       font-size: 1.8rem;
+
+      @media screen and (max-width: 550px) {
+        padding: 1.5rem;
+        font-size: 1.6rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 1.4rem;
+      }
     }
   }
 
