@@ -1,0 +1,22 @@
+<div class="nf__container relative w-100 h-100 d-flex ali-center jc-center">
+  <div class="nf__code d-flex ali-center jc-center">
+    <span>404</span>
+  </div>
+
+  <div class="nf-message__container d-flex ali-center">
+    <div class="nf-message__container--content d-flex jc-between">
+      <p class="nf__message mb-9">
+        {{ 'NOT_FOUND_ERROR' | translate }}
+      </p>
+
+      <button
+        mat-stroked-button
+        color="primary"
+        class="nf__button py-2 px-5 d-flex ali-center jc-center"
+        (click)="navigateToHome()"
+      >
+        {{ 'BACK_TO_HOME' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

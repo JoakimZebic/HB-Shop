@@ -1,0 +1,100 @@
+<div class="hb-product-tile relative">
+  <div class="w-100 h-100">
+    <img
+      [src]="product.img"
+      class="w-100 h-100 object-fit-cover"
+      [alt]="'Image of ' + product.name"
+    />
+  </div>
+
+  <div
+    class="hb-product-tile__info absolute top-0 left-0 w-100 h-100 transition05 pe-none d-flex flex-column jc-between p-9"
+  >
+    <button
+      mat-icon-button
+      color="accent"
+      class="hb-product-tile__info--more absolute"
+      (click)="isModalOpened = true"
+    >
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+
+    <div
+      class="hb-product-tile__info--text d-flex ali-center jc-center flex-auto flex-column"
+    >
+      <h3 class="fw-bold text-center mb-5">{{ product.name }}</h3>
+      <span class="line"></span>
+      <span class="text-center mt-5">{{ product.price + ' RSD' }}</span>
+      <p class="text-center clamp mt-8">{{ product.description }}</p>
+    </div>
+
+    <div
+      class="hb-product-tile__info--add d-flex ali-center jc-center pointer mx-auto my-0 transition05 relative"
+      [class.clicked]="isClicked"
+      (click)="addToCart()"
+    >
+      <mat-icon>add_shopping_cart</mat-icon>
+      <span class="fw-bold ws-nowrap w-0 transition05">{{
+        'ADD_TO_CART' | translate
+      }}</span>
+    </div>
+  </div>
+</div>
+
+<div
+  class="hb-product-tile__modal w-100 h-100 fixed top-0 left-0 transition05 z-100 pe-none w-100 h-100 d-flex ali-center jc-center"
+  [class.active]="isModalOpened"
+>
+  <div
+    class="hb-product-tile__modal--backdrop absolute top-0 left-0 w-100 h-100"
+    (click)="isModalOpened = false"
+  ></div>
+
+  <div class="hb-product-tile__modal--content h-100 relative z-2 relative">
+    <button
+      mat-icon-button
+      color="primary"
+      class="absolute top-0 right-0"
+      (click)="isModalOpened = false"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="img-container w-100">
+      <img
+        [src]="product.img"
+        class="w-100 h-100 object-fit-cover"
+        [alt]="'Image of ' + product.name"
+      />
+    </div>
+
+    <div class="text-container p-5 pt-9 overflow-hidden">
+      <div
+        class="text-container__scroll overflow-hidden-x overflow-auto-y w-100 h-100"
+      >
+        <h3 class="fw-bold mb-8">{{ product.name }}</h3>
+
+        <p class="price mb-8">
+          <b class="mr-4">{{ 'PRICE' | translate }}:</b>
+          {{ product.price + ' RSD' }}
+        </p>
+
+        <p class="description fw-bold mb-4">{{ 'DESCRIPTION' | translate }}:</p>
+        <p class="description text">
+          {{ product.description }}
+        </p>
+
+        <div
+          class="hb-product-tile__info--add d-flex ali-center jc-center pointer mx-auto my-0 transition05 mt-9 relative"
+          (click)="addToCart()"
+          [class.clicked]="isClicked"
+        >
+          <mat-icon>add_shopping_cart</mat-icon>
+          <span class="fw-bold ws-nowrap w-0 transition05">{{
+            'ADD_TO_CART' | translate
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

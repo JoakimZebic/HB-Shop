@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+// ***************************************** MATERIAL THEME STYLES ***************************************** //
+// @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'src/assets/theme/app-theme.scss';
+@import 'src/assets/theme/material-custom.scss';
+
+// ***************************************** PARTIAL SCSS ***************************************** //
+@import './assets/styles/variables';
+@import './assets/styles/fonts';
+
+:root {
+  // This increases the specificity of selectors in this file and enables us to easily override material styles
+  @import './assets/styles/spellbook';
+}
+
+// ***************************************** CSS RESET ***************************************** //
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+
+  font-family: var(--main-font), sans-serif !important;
+
+  // Custom scrollbar for firefox
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(var(--accent, 0.1));
+}
+
+// Custom selection
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+// Custom scrollbar for  -webkit- browsers
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: rgba(var(--accent), 0.1);
+
+  &-thumb {
+    background: var(--accent);
+  }
+}
+
+html {
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button:focus,
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.mat-body p,
+.mat-body-1 p,
+.mat-typography p {
+  margin: 0;
+}
+
+// ************************ GLOBAL CLASSES ************************ //
+
+.heading {
+  font-family: var(--heading-font) !important;
+}
+
+.material-icons {
+  font-family: 'Material Icons' !important;
+}

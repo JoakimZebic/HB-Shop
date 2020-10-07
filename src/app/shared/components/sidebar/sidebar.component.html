@@ -1,0 +1,69 @@
+<div
+  class="hb-sidebar w-100 h-100 d-flex flex-column jc-between relative z-5 p-9 transition05"
+  [class.collapsed]="!isWelcomePage"
+>
+  <div class="w-100 d-flex ali-center jc-center">
+    <div class="hb-sidebar__logo transition05">
+      <a href="/#/welcome">
+        <h1
+          class="d-flex ali-center jc-center radius-50 fw-bold m-0 transition05"
+        >
+          H•B
+        </h1>
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="w-100 d-flex flex-column ali-center jc-center flex-auto main-heading transition05"
+  >
+    <div>
+      <h1 class="fw-bold transition05">{{ 'HANDSOME_BAGS' | translate }}</h1>
+      <h3 class="mb-8 transition05">{{ 'SLOGAN_1' | translate }}</h3>
+      <p class="transition05">{{ 'SLOGAN_2' | translate }}</p>
+    </div>
+  </div>
+
+  <div class="w-100 d-flex ali-center jc-between flex-wrap">
+    <div class="w-100">
+      <hb-theme-switch
+        [style]="!isWelcomePage ? 'padding: 0; margin: auto' : ''"
+      ></hb-theme-switch>
+    </div>
+
+    <div class="d-flex" [class.flex-wrap]="!isWelcomePage">
+      <div
+        *ngFor="let lang of languages"
+        class="lang-link mr-3 pointer transition05"
+        [class.active]="lang.active"
+        (click)="languageChange(lang.id)"
+      >
+        {{ lang.label | translate }}
+      </div>
+    </div>
+
+    <div class="social mr-3 transition05">
+      <a href="https://www.facebook.com/HandsomeBags/" class="mr-4 transition05"
+        >Facebook</a
+      >
+      <a href="https://www.instagram.com/handsome.bags/" class="transition05"
+        >Instagram</a
+      >
+    </div>
+  </div>
+
+  <div class="cart-button absolute top-50 center-absolute-y">
+    <span
+      *ngIf="cartCounter"
+      class="cart-button--counter d-flex ali-center jc-center absolute top-0 px-3 z-2"
+      [class.bounce]="bounceCounter"
+      >{{ cartCounter }}</span
+    >
+    <div
+      class="cart-button--button pointer d-flex ali-center jc-center w-100 h-100"
+      (click)="navigateTo('/cart')"
+    >
+      <mat-icon class="mr-6">shopping_cart</mat-icon>
+    </div>
+  </div>
+</div>

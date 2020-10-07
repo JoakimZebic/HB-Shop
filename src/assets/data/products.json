@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag1.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag2.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag3.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag4.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag5.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/my-bag.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag1.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag2.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag3.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag4.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  },
+  {
+    "id": 1,
+    "name": "Bag 1",
+    "img": "../../../assets/images/bag5.jpg",
+    "price": 5000,
+    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+  }
+]

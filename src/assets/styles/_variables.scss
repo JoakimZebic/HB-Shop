@@ -1,0 +1,101 @@
+:root {
+  //**** COLORS ****//
+
+  // PRIMARY
+  --primary: #000000;
+  --primary-hue: 151;
+  --primary-saturation: 0;
+  --primary-luminosity: 0;
+  --primary-rgb: 0, 0, 0;
+  --primary-contrast: #ffffff;
+
+  // ACCENT
+  --accent: #1eb6d6;
+  --accent-hue: 190.43;
+  --accent-saturation: 75.41;
+  --accent-luminosity: 47.84;
+  --accent-rgb: 30, 182, 214;
+  --accent-contrast: #ffffff;
+
+  // ERROR
+  --error: #ed143d;
+  --error-hue: 348;
+  --error-saturation: 85;
+  --error-luminosity: 50;
+  --error-rgb: 237, 20, 61;
+  --error-contrast: #ffffff;
+
+  // SUCCESS
+  --success: #4ad794;
+  --success-contrast: #ffffff;
+  --success-rgb: 74, 215, 148;
+
+  //Other
+  --background: #fafafa;
+  --background-rgb: 250, 250, 250;
+
+  --surface-dark: #fcfcfc;
+  --surface-dark-rgb: 252, 252, 252;
+
+  --surface-light: #ffffff;
+  --surface-light-rgb: 255, 255, 255;
+
+  --text: #060e1d;
+  --text-rgb: 6, 14, 29;
+
+  --text-light: #92a8b4;
+  --text-light-rgb: 146, 168, 180;
+
+  // **** UI Variables **** //
+  --shadow: 0, 0, 0;
+  --main-spacing: 3rem;
+  --sidebar-width: 7rem;
+}
+
+// **************************************************** Dark theme **************************************************** //
+html.dark {
+  // PRIMARY
+  --primary: #ffffff;
+  --primary-hue: 0;
+  --primary-saturation: 0;
+  --primary-luminosity: 100;
+  --primary-rgb: 255, 255, 255;
+  --primary-contrast: #000000;
+
+  // ACCENT
+  --accent: #1eb6d6;
+  --accent-hue: 190.43;
+  --accent-saturation: 75.41;
+  --accent-luminosity: 47.84;
+  --accent-rgb: 30, 182, 214;
+  --accent-contrast: #ffffff;
+
+  // ERROR
+  --error: #ed143d;
+  --error-hue: 348;
+  --error-saturation: 85;
+  --error-luminosity: 50;
+  --error-rgb: 237, 20, 61;
+  --error-contrast: #ffffff;
+
+  // SUCCESS
+  --success: #4ad794;
+  --success-contrast: #ffffff;
+  --success-rgb: 74, 215, 148;
+
+  //Other
+  --background: #232222;
+  --background-rgb: 35, 34, 34;
+
+  --surface-dark: #3c3c3c;
+  --surface-dark-rgb: 60, 60, 60;
+
+  --surface-light: #525252;
+  --surface-light-rgb: 82, 82, 82;
+
+  --text: #ffffff;
+  --text-rgb: 255, 255, 255;
+
+  --text-light: #8a8a8a;
+  --text-light-rgb: 138, 138, 138;
+}

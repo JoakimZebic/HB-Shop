@@ -1,0 +1,15 @@
+.hb-sidebar-container {
+  width: var(--sidebar-width);
+
+  &.activeSidebar {
+    width: 45%;
+  }
+}
+
+.hb-content-container {
+  width: calc(100% - var(--sidebar-width));
+
+  &.activeSidebar {
+    width: 55%;
+  }
+}

@@ -1,0 +1,25 @@
+.hb-shop {
+  align-content: flex-start;
+
+  &__loader {
+    background-color: var(--surface-light);
+
+    h1 {
+      border: 0.5rem solid;
+      width: 10rem;
+      height: 10rem;
+      font-size: 3rem;
+      animation: rotate 1s infinite;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

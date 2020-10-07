@@ -1,0 +1,166 @@
+<div class="hb-cart p-10 d-flex flex-column w-100 h-100">
+  <div class="hb-cart__title w-100 d-flex ali-center mb-6">
+    <button
+      mat-icon-button
+      color="accent"
+      (click)="navigateTo('/shop')"
+      class="mb-2 mr-4"
+    >
+      <mat-icon>reply</mat-icon>
+    </button>
+    <h1 class="fw-bold m-0">{{ 'YOUR_CART' | translate }}</h1>
+  </div>
+
+  <div class="d-flex flex-auto w-100 jc-between">
+    <div
+      class="hb-cart__items w-50 d-flex flex-column px-5 overflow-hidden-x overflow-auto-y relative"
+    >
+      <ng-container *ngIf="cartProducts.length">
+        <div
+          @removeItemAnimation
+          *ngFor="let product of cartProducts; let i = index"
+          class="hb-cart__items--item w-100 d-flex ali-center mb-4"
+        >
+          <div class="img-container">
+            <img [src]="product.img" class="w-100 h-100 object-fit-cover" />
+          </div>
+
+          <div class="d-flex flex-auto px-6 py-5">
+            <div class="name w-70 fw-bold ellipsis overflow-hidden ws-nowrap">
+              <span class="w-100">
+                {{ product.name }}
+              </span>
+            </div>
+
+            <p class="price w-30 text-right">
+              {{ product.price + ' RSD' }}
+            </p>
+          </div>
+          <button
+            mat-icon-button
+            color="warn"
+            class="mr-5"
+            (click)="removeFromCart(i)"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!cartProducts.length">
+        <p
+          class="hb-cart__items--empty text-center absolute top-50 left-50 w-50 center-absolute fw-bold"
+        >
+          {{ 'EMPTY_CART' | translate }}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="hb-cart__separator d-flex"></div>
+
+    <div class="hb-cart__form w-45 d-flex flex-column px-5">
+      <p class="hb-cart__form--total w-100 mb-9 fw-bold text-right">
+        <span class="fw-normal mr-6">{{ 'TOTAL_SUM' | translate }}:</span>
+        {{ totalSum + ',00 RSD' }}
+      </p>
+
+      <div class="flex-auto mt-9">
+        <form [formGroup]="buyForm" class="w-100 d-flex jc-between flex-wrap">
+          <mat-form-field class="w-45 mb-4">
+            <input
+              matInput
+              formControlName="firstName"
+              autocomplete
+              placeholder="{{ 'FIRST_NAME' | translate }}"
+              required
+            />
+            <mat-error *ngIf="buyForm.get('firstName').hasError('required')">{{
+              'REQUIRED_ERROR' | translate
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-45 mb-4">
+            <input
+              matInput
+              formControlName="lastName"
+              autocomplete
+              placeholder="{{ 'LAST_NAME' | translate }}"
+              required
+            />
+            <mat-error *ngIf="buyForm.get('lastName').hasError('required')">{{
+              'REQUIRED_ERROR' | translate
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 mb-4">
+            <input
+              matInput
+              formControlName="email"
+              autocomplete
+              placeholder="{{ 'EMAIL_ADDRESS' | translate }}"
+              required
+            />
+            <mat-error *ngIf="buyForm.get('email').hasError('required')">{{
+              'REQUIRED_ERROR' | translate
+            }}</mat-error>
+            <mat-error *ngIf="buyForm.get('email').hasError('email')">{{
+              'EMAIL_ERROR' | translate
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 mb-4">
+            <input
+              matInput
+              formControlName="shippingAddress"
+              autocomplete
+              placeholder="{{ 'SHIPPING_ADDRESS' | translate }}"
+              required
+            />
+            <mat-error
+              *ngIf="buyForm.get('shippingAddress').hasError('required')"
+              >{{ 'REQUIRED_ERROR' | translate }}</mat-error
+            >
+          </mat-form-field>
+        </form>
+
+        <div class="mt-6 bullets">
+          <p><span>•</span>{{ 'BULLET_1' | translate }}</p>
+          <p><span>•</span>{{ 'BULLET_2' | translate }}</p>
+          <p><span>•</span>{{ 'BULLET_3' | translate }}</p>
+        </div>
+      </div>
+
+      <button
+        mat-flat-button
+        color="accent"
+        class="checkout-btn w-100 p-6 d-flex ali-center jc-center fw-bold uppercase"
+        [disabled]="!cartProducts.length || buyForm.invalid"
+        (click)="checkout()"
+      >
+        <mat-icon class="mr-4">shopping_cart</mat-icon>
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="hb-cart__modal w-100 h-100 fixed top-0 left-0 transition05 z-100 pe-none w-100 h-100 d-flex ali-center jc-center"
+  [class.active]="checkoutCompleteModal"
+>
+  <div class="hb-cart__modal--content">
+    <div class="px-10 py-9">
+      <h3 class="fw-bold text-center mt-5 mb-7">{{ 'SUCCESS' | translate }}</h3>
+      <p>{{ 'ORDER_RECEIVED' | translate }}</p>
+    </div>
+
+    <button
+      mat-flat-button
+      color="accent"
+      class="w-100 p-4"
+      (click)="navigateTo('/shop')"
+    >
+      {{ 'BACK_TO_SHOP' | translate }}
+    </button>
+  </div>
+</div>

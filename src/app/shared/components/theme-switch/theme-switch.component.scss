@@ -1,0 +1,17 @@
+.theme-switch {
+  width: 2.5rem;
+  height: 2.5rem;
+  box-sizing: initial;
+  color: var(--text-light);
+
+  & > svg,
+  & > svg path {
+    color: unset;
+  }
+
+  @media screen and (hover: hover) {
+    &:hover {
+      color: var(--text);
+    }
+  }
+}

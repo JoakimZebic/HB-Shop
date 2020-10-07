@@ -1,0 +1,62 @@
+<div class="hb-welcome w-100 h-100 d-flex jc-center">
+  <div class="d-flex flex-column w-100 h-100">
+    <div class="hb-welcome__carousel w-100 h-60">
+      <mat-carousel
+        timings="250ms ease-in"
+        [autoplay]="true"
+        interval="5000"
+        color="accent"
+        maxWidth="100%"
+        proportion="25"
+        slides="5"
+        [loop]="true"
+        [hideArrows]="false"
+        [hideIndicators]="false"
+        [useKeyboard]="false"
+        [useMouseWheel]="false"
+        orientation="ltr"
+      >
+        <mat-carousel-slide
+          #matCarouselSlide
+          image="../assets/images/bag1.jpg"
+          [hideOverlay]="true"
+        ></mat-carousel-slide>
+        <mat-carousel-slide
+          image="../assets/images/bag2.jpg"
+          [hideOverlay]="true"
+        ></mat-carousel-slide>
+        <mat-carousel-slide
+          image="../assets/images/bag3.jpg"
+          [hideOverlay]="true"
+        ></mat-carousel-slide>
+        <mat-carousel-slide
+          image="../assets/images/bag4.jpg"
+          [hideOverlay]="true"
+        ></mat-carousel-slide>
+      </mat-carousel>
+    </div>
+
+    <div class="w-100 h-40 d-flex">
+      <div class="w-50">
+        <img
+          src="../assets/images/my-bag.jpg"
+          alt="Bag"
+          class="w-100 h-100 object-fit-cover"
+        />
+      </div>
+
+      <div
+        class="hb-welcome__collection w-50 p-9 d-flex flex-column text-right jc-center ali-end pointer transition05"
+        (click)="navigateTo('/shop')"
+      >
+        <h4 class="w-100 fw-bold mb-9 pe-none">
+          {{ 'SEE_COLLECTION' | translate }}
+        </h4>
+        <P class="mt-5 d-flex ali-center pe-none"
+          ><mat-icon class="mr-9 h-unset">arrow_right_alt</mat-icon
+          >{{ 'HB_COLLECTION' | translate }}</P
+        >
+      </div>
+    </div>
+  </div>
+</div>

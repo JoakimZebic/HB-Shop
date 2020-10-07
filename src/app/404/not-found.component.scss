@@ -1,0 +1,57 @@
+.nf {
+  &__container {
+    padding: 0 1rem;
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+
+  &__code {
+    font-weight: 900;
+    font-size: 17rem;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    padding-right: 5rem;
+    margin-right: 5rem;
+    border-right: 1px solid var(--accent);
+    color: var(--accent);
+
+    @media screen and (max-width: 800px) {
+      font-size: 13rem;
+    }
+
+    @media screen and (max-width: 650px) {
+      padding-right: 0;
+      margin-right: 0;
+      border-right: unset;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 5rem;
+      padding-bottom: 3rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__message {
+    font-size: 1.7rem;
+    color: var(--accent);
+    width: 250px;
+
+    @media screen and (max-width: 650px) {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
+  }
+
+  &-message__container {
+    &--content {
+      flex-direction: column;
+    }
+  }
+}
