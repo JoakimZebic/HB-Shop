@@ -61,7 +61,7 @@
     <div class="hb-cart__form w-45 d-flex flex-column px-5">
       <p class="hb-cart__form--total w-100 mb-9 fw-bold text-right">
         <span class="fw-normal mr-6">{{ 'TOTAL_SUM' | translate }}:</span>
-        {{ totalSum + ',00 RSD' }}
+        {{ totalSum | spaceThousands }},00 RSD
       </p>
 
       <div class="flex-auto mt-9">

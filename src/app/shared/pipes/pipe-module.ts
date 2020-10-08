@@ -1,10 +1,11 @@
-import {NgModule} from '@angular/core';
-import {ImageUrlPipe} from './image-url.pipe';
+import { NgModule } from '@angular/core';
+import { ImageUrlPipe } from './image-url.pipe';
+import { SpaceThousandsPipe } from './spaceThousands.pipe';
 
 @NgModule({
   imports: [],
-  declarations: [ImageUrlPipe],
-  exports: [ImageUrlPipe],
+  declarations: [ImageUrlPipe, SpaceThousandsPipe],
+  exports: [ImageUrlPipe, SpaceThousandsPipe],
 })
 export class PipeModule {
   static forRoot() {

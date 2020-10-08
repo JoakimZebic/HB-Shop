@@ -1,12 +1,10 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'imageUrl'
+  name: 'imageUrl',
 })
 export class ImageUrlPipe implements PipeTransform {
-
-  constructor() {
-  }
+  constructor() {}
 
   transform(value: string): string {
     if (!value) {
