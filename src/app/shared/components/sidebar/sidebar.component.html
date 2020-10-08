@@ -63,9 +63,10 @@
     >
     <div
       class="cart-button--button pointer d-flex ali-center jc-center w-100 h-100"
-      (click)="navigateTo('/cart')"
+      (click)="navigateTo(route === '/shop' ? '/cart' : '/shop')"
     >
-      <mat-icon class="mr-6">shopping_cart</mat-icon>
+      <mat-icon *ngIf="route === '/shop'" class="mr-6">shopping_cart</mat-icon>
+      <mat-icon *ngIf="route === '/cart'" class="mr-6">reply</mat-icon>
     </div>
   </div>
 </div>

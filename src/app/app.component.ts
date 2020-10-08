@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   defaultLang: string;
   subscriptions = new Subscription();
   sidebarWelcomePage = false;
+  route: string;
 
   constructor(
     private translate: TranslateService,
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const regex = new RegExp('^/welcome$');
     router.events.subscribe((val) => {
       if (val instanceof NavigationStart) {
+        this.route = val.url;
         if (regex.test(val.url) || val.url === '/') {
           this.sidebarWelcomePage = true;
         } else {

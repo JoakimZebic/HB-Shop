@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
   }
 
   @Input() isWelcomePage = false;
+  @Input() route: string;
 
   selectedLang: any;
   languages = [
