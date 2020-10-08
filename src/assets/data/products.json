@@ -1,79 +1,202 @@
 [
   {
     "id": 1,
-    "name": "Bag 1 Bag 2 Bag 3 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "name": "H•B Bag 1",
     "img": "../../../assets/images/bag1.jpg",
     "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
+    "id": 2,
+    "name": "H•B Bag 2",
     "img": "../../../assets/images/bag2.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "price": 4500,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
+    "id": 3,
+    "name": "H•B Bag 3",
     "img": "../../../assets/images/bag3.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "price": 3000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
+    "id": 4,
+    "name": "H•B Bag 4",
     "img": "../../../assets/images/bag4.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "price": 4000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
+    "id": 5,
+    "name": "H•B Bag 5",
     "img": "../../../assets/images/bag5.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "price": 5500,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
-    "img": "../../../assets/images/my-bag.jpg",
+    "id": 6,
+    "name": "H•B Bag 6",
+    "img": "../../../assets/images/bag6.jpg",
     "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
-    "img": "../../../assets/images/bag1.jpg",
+    "id": 7,
+    "name": "H•B Bag 7",
+    "img": "../../../assets/images/bag7.jpg",
     "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
-    "img": "../../../assets/images/bag2.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "id": 8,
+    "name": "H•B Bag 8",
+    "img": "../../../assets/images/bag8.jpg",
+    "price": 4600,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
-    "img": "../../../assets/images/bag3.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "id": 9,
+    "name": "H•B Bag 9",
+    "img": "../../../assets/images/bag9.jpg",
+    "price": 3500,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
-    "img": "../../../assets/images/bag4.jpg",
-    "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "id": 10,
+    "name": "H•B Bag 10",
+    "img": "../../../assets/images/bag10.jpg",
+    "price": 4000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   },
   {
-    "id": 1,
-    "name": "Bag 1",
-    "img": "../../../assets/images/bag5.jpg",
+    "id": 11,
+    "name": "H•B Bag 11",
+    "img": "../../../assets/images/bag11.jpg",
     "price": 5000,
-    "description": "Neki Deskripsn koji je poprilicno dugacak da bih mogao da testiram line-clamping u product tile komponenti"
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 12,
+    "name": "H•B Bag 12",
+    "img": "../../../assets/images/bag12.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 13,
+    "name": "H•B Bag 13",
+    "img": "../../../assets/images/bag13.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 14,
+    "name": "H•B Bag 14",
+    "img": "../../../assets/images/bag14.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 15,
+    "name": "H•B Bag 15",
+    "img": "../../../assets/images/bag15.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 16,
+    "name": "H•B Bag 16",
+    "img": "../../../assets/images/bag16.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 17,
+    "name": "H•B Bag 17",
+    "img": "../../../assets/images/bag17.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 18,
+    "name": "H•B Bag 18",
+    "img": "../../../assets/images/bag18.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 19,
+    "name": "H•B Bag 19",
+    "img": "../../../assets/images/bag19.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
+  },
+  {
+    "id": 20,
+    "name": "H•B Bag 20",
+    "img": "../../../assets/images/bag20.jpg",
+    "price": 5000,
+    "description": {
+      "en": "Description of this bag in english",
+      "sr": "Opis ove torbe na srpskom"
+    }
   }
 ]

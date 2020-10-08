@@ -1,6 +1,35 @@
 /* CSS Spells by:
-/* Joakim Zebic --> ( www.joakimzebic.com )
+/* Joakim Zebić --> ( www.joakimzebic.com )
 
+/*********************************** CSS RESET ***********************************/
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button:focus,
+textarea:focus,
+input:focus {
+  outline: none;
+} */
 
 /************************************ Element sizing ************************************/
 .w-auto {
@@ -29,6 +58,9 @@
 }
 .w-30 {
   width: 30%;
+}
+.w-33 {
+  width: 33.33%;
 }
 .w-35 {
   width: 35%;
@@ -102,6 +134,9 @@
 }
 .h-30 {
   height: 30%;
+}
+.h-33 {
+  height: 33.33%;
 }
 .h-35 {
   height: 35%;
@@ -245,6 +280,9 @@
 .jc-end {
   justify-content: flex-end;
 }
+.jc-unset {
+  justify-content: unset;
+}
 
 .ali-start {
   align-items: flex-start;
@@ -258,9 +296,28 @@
 .ali-base {
   align-items: baseline;
 }
+.ali-unset {
+  align-items: unset;
+}
+
+.alc-start {
+  align-content: flex-start;
+}
+.alc-center {
+  align-content: center;
+}
+.alc-end {
+  align-content: flex-end;
+}
+.alc-unset {
+  align-content: unset;
+}
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 
 .flex-row {
@@ -851,12 +908,14 @@
 .ws-nowrap {
   white-space: nowrap;
 }
-.ws-pre-line {
-  white-space: pre-line;
+.ws-pre {
+  white-space: pre;
 }
 
 .ellipsis {
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /************************************ Utility ************************************/
@@ -991,6 +1050,7 @@
   }
 }
 
+/************************************ Line clamping -- NOT TESTED WITHOUT AUTOPREFIXER IN ANGULAR APP ************************************/
 /* autoprefixer: off */
 .clamp {
   display: -webkit-box;

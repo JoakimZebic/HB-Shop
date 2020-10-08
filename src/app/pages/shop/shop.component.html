@@ -3,7 +3,7 @@
 >
   <ng-container *ngIf="!isLoading">
     <div *ngFor="let product of products" class="tile-wrapper w-25">
-      <hb-product-tile [product]="product"></hb-product-tile>
+      <hb-product-tile [product]="product" [lang]="lang"></hb-product-tile>
     </div>
   </ng-container>
 

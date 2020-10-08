@@ -3,5 +3,8 @@ export interface ProductModel {
   name: string;
   img: string;
   price: number;
-  description: string;
+  description: {
+    en: string;
+    sr: string;
+  };
 }

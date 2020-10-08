@@ -25,7 +25,9 @@
       <h3 class="fw-bold text-center mb-5 w-100 clamp">{{ product.name }}</h3>
       <span class="line"></span>
       <span class="text-center mt-5">{{ product.price + ' RSD' }}</span>
-      <p class="text-center clamp mt-8">{{ product.description }}</p>
+      <p class="text-center clamp mt-8 ws-pre">
+        {{ product.description[lang] }}
+      </p>
     </div>
 
     <div
@@ -80,8 +82,8 @@
         </p>
 
         <p class="description fw-bold mb-4">{{ 'DESCRIPTION' | translate }}:</p>
-        <p class="description text">
-          {{ product.description }}
+        <p class="description text ws-pre">
+          {{ product.description[lang] }}
         </p>
 
         <div

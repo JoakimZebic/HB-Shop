@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { CartCounterService } from './../../../shared/services/cart-counter.service';
 import { LocalStorageService } from './../../../shared/services/local-storage/local-storage.service';
 import { ProductModel } from './../../../shared/models/product.model';
@@ -10,6 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductTileComponent implements OnInit {
   @Input() product: ProductModel;
+  @Input() lang: string;
 
   isModalOpened = false;
   isClicked = false;

@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ProductModel } from './../../shared/models/product.model';
 import { ProductsService } from './../../shared/services/http/products.service';
@@ -12,10 +13,22 @@ export class ShopComponent implements OnInit, OnDestroy {
   products: ProductModel[];
   subscription = new Subscription();
   isLoading = true;
+  lang: string;
 
-  constructor(private ps: ProductsService) {}
+  constructor(
+    private ps: ProductsService,
+    private translate: TranslateService
+  ) {
+    const translateSub = translate.onLangChange.subscribe(
+      (selectedLang) => (this.lang = selectedLang.lang)
+    );
+
+    this.subscription.add(translateSub);
+  }
 
   ngOnInit(): void {
+    this.lang = this.translate.currentLang;
+
     const productSub = this.ps.getProducts().subscribe(
       (res) => {
         this.products = res;
