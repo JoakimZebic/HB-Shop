@@ -2,7 +2,16 @@ export interface ProductModel {
   id: number;
   name: string;
   img: string;
-  price: number;
+  price: {
+    en: {
+      value: number;
+      currency: string;
+    };
+    sr: {
+      value: number;
+      currency: string;
+    };
+  };
   description: {
     en: string;
     sr: string;

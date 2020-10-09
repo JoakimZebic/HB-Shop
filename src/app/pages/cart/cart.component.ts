@@ -1,8 +1,10 @@
+import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { CartCounterService } from './../../shared/services/cart-counter.service';
 import { LocalStorageService } from './../../shared/services/local-storage/local-storage.service';
 import { ProductModel } from './../../shared/models/product.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   animate,
@@ -28,18 +30,30 @@ import { bounceOutLeftAnimation } from 'src/app/shared/animations';
     ]),
   ],
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   cartProducts: ProductModel[];
   totalSum: number;
 
   buyForm: FormGroup;
   checkoutCompleteModal = false;
+  lang: string;
+
+  subscription = new Subscription();
 
   constructor(
     private lcs: LocalStorageService,
     private counterService: CartCounterService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translate: TranslateService
+  ) {
+    const translateSub = translate.onLangChange.subscribe((selectedLang) => {
+      this.lang = selectedLang.lang;
+      this.calcTotalSum(this.cartProducts);
+    });
+
+    this.subscription.add(translateSub);
+    this.lang = this.translate.currentLang;
+  }
 
   ngOnInit(): void {
     this.cartProducts = this.lcs.get('cart') || [];
@@ -73,7 +87,7 @@ export class CartComponent implements OnInit {
     this.totalSum = 0;
 
     for (const product of products) {
-      this.totalSum += product.price;
+      this.totalSum += product.price[this.lang].value;
     }
   }
 
@@ -90,5 +104,9 @@ export class CartComponent implements OnInit {
     this.totalSum = 0;
     this.buyForm.reset();
     this.counterService.counter = 0;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
