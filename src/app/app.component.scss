@@ -1,10 +1,12 @@
+@import '../assets/theme/theme-functions';
+
 .hb-app {
   @media screen and (max-width: 1050px) {
     flex-wrap: wrap;
   }
 
   .hb-sidebar-container {
-    width: var(--sidebar-width);
+    width: getVar($varSidebarWidth);
 
     &.activeSidebar {
       width: 45%;
@@ -12,7 +14,7 @@
 
     @media screen and (max-width: 1050px) {
       width: 100%;
-      height: var(--sidebar-width);
+      height: getVar($varSidebarWidth);
 
       &.activeSidebar {
         width: 100%;
@@ -23,7 +25,7 @@
   }
 
   .hb-content-container {
-    width: calc(100% - var(--sidebar-width));
+    width: calc(100% - #{getVar($varSidebarWidth)});
 
     &.activeSidebar {
       width: 55%;
@@ -31,7 +33,7 @@
 
     @media screen and (max-width: 1050px) {
       width: 100%;
-      height: calc(100% - var(--sidebar-width));
+      height: calc(100% - #{getVar($varSidebarWidth)});
 
       &.activeSidebar {
         width: 100%;

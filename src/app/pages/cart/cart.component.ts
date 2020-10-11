@@ -23,7 +23,10 @@ import { bounceOutLeftAnimation } from 'src/app/shared/animations';
     trigger('removeItemAnimation', [
       transition(':enter', []),
       transition(':leave', [
-        style({ backgroundColor: 'var(--error)' }),
+        style({
+          backgroundColor:
+            'hsl(var(--error-hue), calc(var(--error-saturation) * 1%),  calc(var(--error-luminosity) * 1%))',
+        }),
         animate(1000),
         useAnimation(bounceOutLeftAnimation),
       ]),

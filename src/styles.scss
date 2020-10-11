@@ -1,6 +1,7 @@
 // ***************************************** MATERIAL THEME STYLES ***************************************** //
 // @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'src/assets/theme/app-theme.scss';
+@import 'src/assets/theme/theme-functions.scss';
 @import 'src/assets/theme/material-custom.scss';
 
 // ***************************************** PARTIAL SCSS ***************************************** //
@@ -19,7 +20,7 @@
   box-sizing: border-box;
   outline: none;
 
-  font-family: var(--main-font), sans-serif !important;
+  font-family: getVar($varMainFont), sans-serif !important;
 
   // Custom scrollbar for firefox
   scrollbar-width: thin;
@@ -28,18 +29,18 @@
 
 // Custom selection
 ::selection {
-  background: var(--accent);
-  color: var(--accent-contrast);
+  background: getColor($accent);
+  color: getColor($accentContrast);
 }
 
 // Custom scrollbar for  -webkit- browsers
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background: rgba(var(--accent), 0.1);
+  background: getColor($accent, 0.1);
 
   &-thumb {
-    background: var(--accent);
+    background: getColor($accent);
   }
 }
 
@@ -54,8 +55,8 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: var(--background);
-  color: var(--text);
+  background-color: getColor($background);
+  color: getColor($text);
   overflow: hidden;
 }
 
@@ -89,7 +90,7 @@ input:focus {
 // ************************ GLOBAL CLASSES ************************ //
 
 .heading {
-  font-family: var(--heading-font) !important;
+  font-family: getVar($varHeadingFont) !important;
 }
 
 .material-icons {

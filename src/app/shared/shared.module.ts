@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PipeModule } from './pipes/pipe-module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { LoaderComponent } from './components/loader/loader.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -39,14 +38,13 @@ const MATERIAL_COMPONENTS = [
     ...MATERIAL_COMPONENTS,
     TranslateModule,
   ],
-  declarations: [SidebarComponent, LoaderComponent, ThemeSwitchComponent],
+  declarations: [SidebarComponent, ThemeSwitchComponent],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     PipeModule,
     SidebarComponent,
-    LoaderComponent,
     ThemeSwitchComponent,
     ...MATERIAL_COMPONENTS,
   ],

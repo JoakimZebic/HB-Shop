@@ -1,0 +1,44 @@
+// ****************************************  Colors  **************************************** //
+// Type check
+$colorList: (
+  'primary',
+  'primary-contrast',
+  'accent',
+  'accent-contrast',
+  'error',
+  'error-contrast',
+  'success',
+  'success-contrast',
+  'background',
+  'surface-dark',
+  'surface-light',
+  'text',
+  'text-light',
+  'shadow'
+);
+
+// Autocomplete
+$primary: 'primary';
+$primaryContrast: 'primary-contrast';
+$accent: 'accent';
+$accentContrast: 'accent-contrast';
+$error: 'error';
+$errorContrast: 'error-contrast';
+$success: 'success';
+$success-contrast: 'success-contrast';
+$background: 'background';
+$surfaceDark: 'surface-dark';
+$surfaceLight: 'surface-light';
+$text: 'text';
+$textLight: 'text-light';
+$shadow: 'shadow';
+
+// ****************************************  UI Variables  **************************************** //
+// Type check
+$varList: ('main-font', 'heading-font', 'main-spacing', 'sidebar-width');
+
+// Autocomplete
+$varMainFont: 'main-font';
+$varHeadingFont: 'heading-font';
+$varMainSpacing: 'main-spacing';
+$varSidebarWidth: 'sidebar-width';

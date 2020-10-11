@@ -1,10 +1,12 @@
+@import '../../../../assets/theme/theme-functions';
+
 .hb-sidebar {
   background-image: linear-gradient(
     to bottom right,
-    var(--surface-light),
-    var(--surface-dark)
+    getColor($surfaceLight),
+    getColor($surfaceDark)
   );
-  box-shadow: 1.5rem 1.5rem 1.5rem rgba(var(--shadow), 0.1);
+  box-shadow: 1.5rem 1.5rem 1.5rem getColor($shadow, 0.1);
 
   &__logo {
     height: 6rem;
@@ -19,7 +21,7 @@
         width: 6rem;
         height: 6rem;
         font-size: 2rem;
-        color: var(--text);
+        color: getColor($text);
       }
     }
   }
@@ -27,17 +29,17 @@
   .main-heading {
     h1 {
       font-size: 5rem;
-      color: var(--text);
+      color: getColor($text);
       line-height: 1;
     }
 
     h3 {
       font-size: 2rem;
-      color: var(--text);
+      color: getColor($text);
     }
 
     p {
-      color: var(--text-light);
+      color: getColor($textLight);
     }
 
     @media screen and (max-width: 1200px) {
@@ -76,21 +78,21 @@
   }
 
   .lang-link {
-    color: var(--text-light);
+    color: getColor($textLight);
 
     &.active {
-      color: var(--text);
+      color: getColor($text);
       font-weight: bold;
     }
   }
 
   .social {
-    color: var(--text-light);
+    color: getColor($textLight);
     transform: translate(45%, -500%) rotate(-90deg);
 
     a {
       &:hover {
-        color: var(--text);
+        color: getColor($text);
         text-decoration: underline;
       }
     }
@@ -135,20 +137,12 @@
 
     &--button {
       clip-path: polygon(100% 50%, 0 0, 0 100%);
-      background-color: hsl(
-        var(--accent-hue),
-        calc(var(--accent-saturation) * 1%),
-        calc(var(--accent-luminosity) * 1%)
-      );
-      color: var(--accent-contrast);
+      background-color: getColor($accent);
+      color: getColor($accentContrast);
       transition: 0.5s;
 
       &:hover {
-        background-color: hsl(
-          var(--accent-hue),
-          calc(var(--accent-saturation) * 1%),
-          calc((var(--accent-luminosity) - 10) * 1%)
-        );
+        background-color: darker($accent, 10);
       }
 
       @media screen and (max-width: 1050px) {
@@ -163,8 +157,8 @@
 
     &--counter {
       left: 1rem;
-      background: var(--text);
-      color: var(--surface-light);
+      background: getColor($text);
+      color: getColor($surfaceLight);
       min-width: 3rem;
       height: 3rem;
       border-radius: 3rem;

@@ -1,12 +1,14 @@
+@import '../../../../assets/theme/theme-functions';
+
 .hb-product-tile {
   height: 45rem;
   overflow: hidden;
-  border-bottom: 1px solid var(--text-light);
-  border-right: 1px solid var(--text-light);
+  border-bottom: 1px solid getColor($textLight);
+  border-right: 1px solid getColor($textLight);
 
   &__info {
     height: 0;
-    background-color: var(--surface-light);
+    background-color: getColor($surfaceLight);
     opacity: 0;
 
     &--more {
@@ -17,47 +19,47 @@
     &--text {
       h3 {
         font-size: 3.5rem;
-        color: var(--text);
+        color: getColor($text);
         line-height: 1.2;
       }
 
       span {
         font-size: 2rem;
-        color: var(--text);
+        color: getColor($text);
 
         &.line {
           width: 6rem;
           height: 0.2rem;
-          background: var(--accent);
+          background: getColor($accent);
           margin-bottom: 1rem;
         }
       }
 
       p {
         font-size: 1.4rem;
-        color: var(--text-light);
+        color: getColor($textLight);
       }
     }
 
     &--add {
       width: 8rem;
       height: 8rem;
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      border: 1px solid getColor($accent);
+      color: getColor($accent);
       border-radius: 8rem;
 
       span {
         transform: translateX(2rem);
         font-size: 0;
         opacity: 0;
-        color: var(--accent-contrast);
+        color: getColor($accentContrast);
       }
 
       @media screen and (hover: hover) {
         &:hover {
           width: 20rem;
-          background-color: var(--accent);
-          color: var(--accent-contrast);
+          background-color: getColor($accent);
+          color: getColor($accentContrast);
 
           span {
             width: 10rem;
@@ -73,7 +75,7 @@
         width: 8rem;
         height: 8rem;
         border-radius: 8rem;
-        border: 1rem solid rgba(var(--accent-rgb), 0);
+        border: 1rem solid getColor($accent, 0);
         top: 50%;
         left: 50%;
         opacity: 1;
@@ -92,7 +94,7 @@
           width: 8rem;
           height: 8rem;
           opacity: 0;
-          border: 4rem solid rgba(var(--accent-rgb), 0.3);
+          border: 4rem solid getColor($accent, 0.3);
           transition: width 0.4s, height 0.4s, opacity 0.4s, border-width 0.4s;
 
           @media screen and (hover: hover) {
@@ -106,7 +108,7 @@
 
   &:hover {
     z-index: 3;
-    box-shadow: 0 0 5rem rgba(var(--shadow), 0.6);
+    box-shadow: 0 0 5rem getColor($shadow, 0.6);
 
     .hb-product-tile__info {
       height: 100%;
@@ -124,23 +126,23 @@
     }
 
     &--backdrop {
-      background: rgba(var(--shadow), 0.6);
+      background: getColor($shadow, 0.6);
     }
 
     &--content {
-      background: var(--surface-light);
+      background: getColor($surfaceLight);
       max-height: 90vh;
       width: 95%;
       max-width: 60rem;
-      box-shadow: 0rem 0rem 2.5rem rgba(var(--shadow), 0.6);
+      box-shadow: 0rem 0rem 2.5rem getColor($shadow, 0.6);
 
       .close-button {
-        color: rgb(var(--shadow));
+        color: getColor($shadow);
       }
 
       .img-container {
         height: 40rem;
-        box-shadow: 0 5px 10px rgba(var(--shadow), 0.3);
+        box-shadow: 0 5px 10px getColor($shadow, 0.3);
 
         @media screen and (max-height: 850px) {
           height: 40%;
@@ -165,14 +167,14 @@
 
           .price {
             font-size: 1.8rem;
-            color: var(--text-light);
+            color: getColor($textLight);
 
             @media screen and (max-width: 500px) {
               font-size: 1.6rem;
             }
 
             b {
-              color: var(--text);
+              color: getColor($text);
             }
           }
 
@@ -184,7 +186,7 @@
             }
 
             &.text {
-              color: var(--text-light);
+              color: getColor($textLight);
             }
           }
         }

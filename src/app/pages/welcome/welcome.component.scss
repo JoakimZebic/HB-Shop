@@ -1,3 +1,5 @@
+@import '../../../assets/theme/theme-functions';
+
 .hb-welcome {
   &--container {
     @media screen and (max-width: 1050px) {
@@ -12,24 +14,16 @@
   }
 
   &__carousel {
-    background-color: var(--primary);
+    background-color: getColor($primary);
   }
 
   &__collection {
-    background-color: hsl(
-      var(--accent-hue),
-      calc(var(--accent-saturation) * 1%),
-      calc(var(--accent-luminosity) * 1%)
-    );
-    color: var(--accent-contrast);
+    background-color: getColor($accent);
+    color: getColor($accentContrast);
 
     @media screen and (hover: hover) {
       &:hover {
-        background-color: hsl(
-          var(--accent-hue),
-          calc(var(--accent-saturation) * 1%),
-          calc((var(--accent-luminosity) - 10) * 1%)
-        );
+        background-color: darker($accent, 10);
       }
     }
 

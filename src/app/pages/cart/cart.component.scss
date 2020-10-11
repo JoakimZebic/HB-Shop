@@ -1,3 +1,5 @@
+@import '../../../assets/theme/theme-functions';
+
 .hb-cart {
   align-content: flex-start;
 
@@ -40,8 +42,8 @@
     }
 
     &--item {
-      background-color: var(--surface-light);
-      box-shadow: 0.3rem 0.3rem 0.6rem rgba(var(--shadow), 0.1);
+      background-color: getColor($surfaceLight);
+      box-shadow: 0.3rem 0.3rem 0.6rem getColor($shadow, 0.1);
 
       @media screen and (max-width: 550px) {
         position: relative;
@@ -74,7 +76,7 @@
       }
 
       .price {
-        color: var(--text-light);
+        color: getColor($textLight);
 
         @media screen and (max-width: 550px) {
           width: 100%;
@@ -89,7 +91,7 @@
           position: absolute;
           width: 0;
           height: 100%;
-          background: rgba(var(--error-rgb), 0.7);
+          background: getColor($error, 0.7);
           opacity: 0;
           transition: 0.5s;
           pointer-events: none;
@@ -99,7 +101,7 @@
           .mat-icon {
             font-size: 4rem;
             width: 4rem;
-            color: var(--error-contrast);
+            color: getColor($errorContrast);
           }
         }
       }
@@ -117,14 +119,14 @@
 
     &--empty {
       font-size: 2.5rem;
-      color: rgba(var(--text-light-rgb), 0.5);
+      color: getColor($textLight, 0.5);
       line-height: 1.2;
     }
   }
 
   &__separator {
     width: 0.1rem;
-    background-color: rgba(var(--text-rgb), 0.1);
+    background-color: getColor($text, 0.1);
   }
 
   &__form {
@@ -160,13 +162,13 @@
       }
 
       span {
-        color: var(--text-light);
+        color: getColor($textLight);
       }
     }
 
     .bullets {
       font-size: 1.6rem;
-      color: var(--text-light);
+      color: getColor($textLight);
 
       @media screen and (max-width: 450px) {
         font-size: 1.4rem;
@@ -180,7 +182,7 @@
 
       span {
         font-size: 4rem;
-        color: var(--accent);
+        color: getColor($accent);
         margin-bottom: 0.5rem;
         margin-right: 1.5rem;
       }
@@ -202,7 +204,7 @@
 
   &__modal {
     opacity: 0;
-    background: rgba(var(--shadow), 0.6);
+    background: getColor($shadow, 0.6);
 
     &.active {
       opacity: 1;
@@ -210,8 +212,8 @@
     }
 
     &--content {
-      background: var(--surface-light);
-      box-shadow: 0rem 0rem 2.5rem rgba(var(--shadow), 0.6);
+      background: getColor($surfaceLight);
+      box-shadow: 0rem 0rem 2.5rem getColor($shadow, 0.6);
       max-width: 90%;
 
       .message {
@@ -221,7 +223,7 @@
       }
 
       h3 {
-        color: var(--accent);
+        color: getColor($accent);
         font-size: 3rem;
       }
     }

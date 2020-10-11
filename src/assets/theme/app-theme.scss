@@ -3,11 +3,15 @@
 @include mat-core();
 @import './palette.scss';
 
-$app-primary: mat-palette($primary-theme);
-$app-accent: mat-palette($accent-theme);
+$theme-app-primary: mat-palette($theme-primary);
+$theme-app-accent: mat-palette($theme-accent);
 
-$app-error: mat-palette($error-theme);
+$theme-app-error: mat-palette($theme-error);
 
-$app-theme: mat-light-theme($app-primary, $app-accent, $app-error);
+$theme-app: mat-light-theme(
+  $theme-app-primary,
+  $theme-app-accent,
+  $theme-app-error
+);
 
-@include angular-material-theme($app-theme);
+@include angular-material-theme($theme-app);

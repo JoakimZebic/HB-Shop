@@ -1,67 +1,44 @@
-@function calc-luminosity($luminosity, $step, $multiplier, $minus: true) {
-  @if ($minus) {
-    @return calc((#{$luminosity} - (#{$step}) * #{$multiplier}) * 1%);
-  } @else {
-    @return calc((#{$luminosity} + (#{$step}) * #{$multiplier}) * 1%);
-  }
-}
+@import './theme-functions';
 
-@function generate-theme($hue, $saturation, $luminosity, $contrast) {
-  //! MUST BE STRING BECAUSE OF FORMATTING INSIDE CALC FUNCTION
-  $step-lighter: '(100 - ' + $luminosity + ') / 5'; //5 --> 50-400
-  $step-darker: $luminosity + ' / 8'; //8 --> 600-A700
-  //! MUST BE STRING BECAUSE OF FORMATTING INSIDE CALC FUNCTION
-
-  $saturation-percentage: calc(#{$saturation} * 1%);
-
+@function generate-theme($color, $contrast) {
   @return (
-    50: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-lighter, 5, false)),
-    100: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-lighter, 4, false)),
-    200: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-lighter, 3, false)),
-    300: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-lighter, 2, false)),
-    400: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-lighter, 1, false)),
+    50: lighter($color, 50),
+    100: lighter($color, 40),
+    200: lighter($color, 30),
+    300: lighter($color, 20),
+    400: lighter($color, 10),
     // MAIN COLOR,
-      500: hsla($hue, $saturation-percentage, calc(#{$luminosity} * 1%), 1),
-    // MAIN COLOR,
-      600: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 1)),
-    700: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 2)),
-    800: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 3)),
-    900: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 4)),
-    A100: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 5)),
-    A200: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 6)),
-    A400: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 7)),
-    A700: hsl($hue, $saturation-percentage, calc-luminosity($luminosity, $step-darker, 8)),
+    500: getColor($color),
+    // MAIN COLOR
+    600: darker($color, 8),
+    700: darker($color, 16),
+    800: darker($color, 24),
+    900: darker($color, 32),
+    A100: darker($color, 40),
+    A200: darker($color, 48),
+    A400: darker($color, 56),
+    A700: darker($color, 64),
     contrast: (
-      50: $contrast,
-      100: $contrast,
-      200: $contrast,
-      300: $contrast,
-      400: $contrast,
-      500: $contrast,
-      600: $contrast,
-      700: $contrast,
-      800: $contrast,
-      900: $contrast,
-      A100: $contrast,
-      A200: $contrast,
-      A400: $contrast,
-      A700: $contrast,
+      50: getColor($contrast),
+      100: getColor($contrast),
+      200: getColor($contrast),
+      300: getColor($contrast),
+      400: getColor($contrast),
+      500: getColor($contrast),
+      600: getColor($contrast),
+      700: getColor($contrast),
+      800: getColor($contrast),
+      900: getColor($contrast),
+      A100: getColor($contrast),
+      A200: getColor($contrast),
+      A400: getColor($contrast),
+      A700: getColor($contrast),
     )
   );
 }
 
-$primary-theme: generate-theme(
-  var(--primary-hue),
-  var(--primary-saturation),
-  var(--primary-luminosity),
-  var(--primary-contrast)
-);
+$theme-primary: generate-theme(primary, primary-contrast);
 
-$accent-theme: generate-theme(
-  var(--accent-hue),
-  var(--accent-saturation),
-  var(--accent-luminosity),
-  var(--accent-contrast)
-);
+$theme-accent: generate-theme(accent, accent-contrast);
 
-$error-theme: generate-theme(var(--error-hue), var(--error-saturation), var(--error-luminosity), var(--error-contrast));
+$theme-error: generate-theme(error, error-contrast);

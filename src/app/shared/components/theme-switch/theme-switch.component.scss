@@ -1,8 +1,10 @@
+@import '../../../../assets/theme/theme-functions';
+
 .theme-switch {
   width: 2.5rem;
   height: 2.5rem;
   box-sizing: initial;
-  color: var(--text-light);
+  color: getColor($textLight);
 
   & > svg,
   & > svg path {
@@ -11,7 +13,7 @@
 
   @media screen and (hover: hover) {
     &:hover {
-      color: var(--text);
+      color: getColor($text);
     }
   }
 }

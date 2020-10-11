@@ -1,3 +1,5 @@
+@import '../../assets/theme/theme-functions';
+
 .nf {
   &__container {
     padding: 0 1rem;
@@ -11,12 +13,12 @@
     font-weight: 900;
     font-size: 17rem;
     line-height: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px getColor($shadow, 0.3);
     width: fit-content;
     padding-right: 5rem;
     margin-right: 5rem;
-    border-right: 1px solid var(--text-light);
-    color: var(--accent);
+    border-right: 1px solid getColor($textLight);
+    color: getColor($accent);
 
     @media screen and (max-width: 800px) {
       font-size: 13rem;
@@ -30,7 +32,7 @@
       padding-right: 0;
       margin-right: 0;
       border-right: unset;
-      border-bottom: 1px solid var(--text-light);
+      border-bottom: 1px solid getColor($textLight);
       margin-bottom: 5rem;
       padding-bottom: 3rem;
       align-items: flex-start;
@@ -39,7 +41,7 @@
 
   &__message {
     font-size: 1.7rem;
-    color: var(--text-light);
+    color: getColor($textLight);
     width: 250px;
 
     @media screen and (max-width: 750px) {

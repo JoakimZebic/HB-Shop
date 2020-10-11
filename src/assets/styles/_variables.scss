@@ -1,53 +1,67 @@
 :root {
   //**** COLORS ****//
-
   // PRIMARY
-  --primary: #000000;
   --primary-hue: 151;
   --primary-saturation: 0;
   --primary-luminosity: 0;
-  --primary-rgb: 0, 0, 0;
-  --primary-contrast: #ffffff;
+
+  --primary-contrast-hue: 0;
+  --primary-contrast-saturation: 0;
+  --primary-contrast-luminosity: 100;
 
   // ACCENT
-  --accent: #1eb6d6;
-  --accent-hue: 190.43;
-  --accent-saturation: 75.41;
-  --accent-luminosity: 47.84;
-  --accent-rgb: 30, 182, 214;
-  --accent-contrast: #ffffff;
+  --accent-hue: 190;
+  --accent-saturation: 75;
+  --accent-luminosity: 47;
+
+  --accent-contrast-hue: 0;
+  --accent-contrast-saturation: 0;
+  --accent-contrast-luminosity: 100;
 
   // ERROR
-  --error: #ed143d;
   --error-hue: 348;
   --error-saturation: 85;
   --error-luminosity: 50;
-  --error-rgb: 237, 20, 61;
-  --error-contrast: #ffffff;
+
+  --error-contrast-hue: 0;
+  --error-contrast-saturation: 0;
+  --error-contrast-luminosity: 100;
 
   // SUCCESS
-  --success: #4ad794;
-  --success-contrast: #ffffff;
-  --success-rgb: 74, 215, 148;
+  --success-hue: 151;
+  --success-saturation: 63;
+  --success-luminosity: 56;
+
+  --success-contrast-hue: 0;
+  --success-contrast-saturation: 0;
+  --success-contrast-luminosity: 100;
 
   //Other
-  --background: #fafafa;
-  --background-rgb: 250, 250, 250;
+  --background-hue: 0;
+  --background-saturation: 0;
+  --background-luminosity: 98.04;
 
-  --surface-dark: #fcfcfc;
-  --surface-dark-rgb: 252, 252, 252;
+  --surface-dark-hue: 0;
+  --surface-dark-saturation: 0;
+  --surface-dark-luminosity: 98.82;
 
-  --surface-light: #ffffff;
-  --surface-light-rgb: 255, 255, 255;
+  --surface-light-hue: 0;
+  --surface-light-saturation: 0;
+  --surface-light-luminosity: 100;
 
-  --text: #060e1d;
-  --text-rgb: 6, 14, 29;
+  --text-hue: 219;
+  --text-saturation: 65;
+  --text-luminosity: 6.86;
 
-  --text-light: #92a8b4;
-  --text-light-rgb: 146, 168, 180;
+  --text-light-hue: 201;
+  --text-light-saturation: 18;
+  --text-light-luminosity: 64;
+
+  --shadow-hue: 0;
+  --shadow-saturation: 0;
+  --shadow-luminosity: 0;
 
   // **** UI Variables **** //
-  --shadow: 0, 0, 0;
   --main-spacing: 3rem;
   --sidebar-width: 7rem;
 }
@@ -55,47 +69,59 @@
 // **************************************************** Dark theme **************************************************** //
 html.dark {
   // PRIMARY
-  --primary: #ffffff;
   --primary-hue: 0;
   --primary-saturation: 0;
   --primary-luminosity: 100;
-  --primary-rgb: 255, 255, 255;
-  --primary-contrast: #000000;
+
+  --primary-contrast-hue: 0;
+  --primary-contrast-saturation: 0;
+  --primary-contrast-luminosity: 0;
 
   // ACCENT
-  --accent: #1eb6d6;
-  --accent-hue: 190.43;
-  --accent-saturation: 75.41;
-  --accent-luminosity: 47.84;
-  --accent-rgb: 30, 182, 214;
-  --accent-contrast: #ffffff;
+  --accent-hue: 190;
+  --accent-saturation: 75;
+  --accent-luminosity: 47;
+
+  --accent-contrast-hue: 0;
+  --accent-contrast-saturation: 0;
+  --accent-contrast-luminosity: 100;
 
   // ERROR
-  --error: #ed143d;
   --error-hue: 348;
   --error-saturation: 85;
   --error-luminosity: 50;
-  --error-rgb: 237, 20, 61;
-  --error-contrast: #ffffff;
+
+  --error-contrast-hue: 0;
+  --error-contrast-saturation: 0;
+  --error-contrast-luminosity: 100;
 
   // SUCCESS
-  --success: #4ad794;
-  --success-contrast: #ffffff;
-  --success-rgb: 74, 215, 148;
+  --success-hue: 151;
+  --success-saturation: 63;
+  --success-luminosity: 56;
+
+  --success-contrast-hue: 0;
+  --success-contrast-saturation: 0;
+  --success-contrast-luminosity: 100;
 
   //Other
-  --background: #2f2f2f;
-  --background-rgb: 47, 47, 47;
+  --background-hue: 0;
+  --background-saturation: 0;
+  --background-luminosity: 18;
 
-  --surface-dark: #3c3c3c;
-  --surface-dark-rgb: 60, 60, 60;
+  --surface-dark-hue: 0;
+  --surface-dark-saturation: 0;
+  --surface-dark-luminosity: 23;
 
-  --surface-light: #525252;
-  --surface-light-rgb: 82, 82, 82;
+  --surface-light-hue: 0;
+  --surface-light-saturation: 0;
+  --surface-light-luminosity: 32;
 
-  --text: #ffffff;
-  --text-rgb: 255, 255, 255;
+  --text-hue: 0;
+  --text-saturation: 0;
+  --text-luminosity: 100;
 
-  --text-light: #a2a2a2;
-  --text-light-rgb: 162, 162, 162;
+  --text-light-hue: 0;
+  --text-light-saturation: 0;
+  --text-light-luminosity: 63;
 }

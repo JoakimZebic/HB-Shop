@@ -1,8 +1,10 @@
+@import '../../../assets/theme/theme-functions';
+
 .hb-shop {
   align-content: flex-start;
 
   &__loader {
-    background-color: var(--surface-light);
+    background-color: getColor($surfaceLight);
 
     h1 {
       border: 0.5rem solid;
@@ -10,7 +12,7 @@
       height: 10rem;
       font-size: 3rem;
       animation: rotate 1s infinite;
-      color: var(--text);
+      color: getColor($text);
     }
   }
 

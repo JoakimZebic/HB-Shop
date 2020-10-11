@@ -1,0 +1,111 @@
+@use "sass:list";
+@import './autocomplete';
+
+// ****************************************  Colors  **************************************** //
+// getColor
+// Function: takes color name and optionally alpha value in range [0-1]
+// Returns: the color with or without opacity
+@function getColor($colorName, $alpha: 1) {
+  // '$colorName' should be a valid color from '$colorList' in _autocomplete.scss
+  $colorName: checkIfColorNameIsValid($colorName);
+  // '$alpha' should be number in range [0-1]
+  $alpha: checkIfArgumentIsNumberInRange($alpha, 0, 1);
+
+  @return unquote(
+    'hsla(var(--' + $colorName + '-hue), calc(var(--' + $colorName +
+      '-saturation) * 1%), calc(var(--' + $colorName + '-luminosity) * 1%), ' +
+      $alpha + ')'
+  );
+}
+
+// lighter
+// Function: takes color name, percentage (as number in range [0-100]) of how much lighter you want that color to be and optionally alpha value in range [0-1]
+// Returns: the lighter version of the passed color with or without opacity
+@function lighter($colorName, $howMuchLighter: 0, $alpha: 1) {
+  // '$colorName' should be a valid color from '$colorList' in _autocomplete.scss
+  $colorName: checkIfColorNameIsValid($colorName);
+  // '$alpha' should be number in range [0-1]
+  $alpha: checkIfArgumentIsNumberInRange($alpha, 0, 1);
+  // '$howMuchLighter' should be number in range [0-100]
+  $howMuchLighter: checkIfArgumentIsNumberInRange($howMuchLighter, 0, 100);
+
+  @return unquote(
+    'hsla(var(--' + $colorName + '-hue), calc(var(--' + $colorName +
+      '-saturation) * 1%), calc((var(--' + $colorName + '-luminosity) + ' +
+      $howMuchLighter + ') * 1%), ' + $alpha + ')'
+  );
+}
+
+// darker
+// Function: takes color name, percentage (as number in range [0-100]) of how much darker you want that color to be and optionally alpha value in range [0-1]
+// Returns: the darker version of the passed color with or without opacity
+@function darker($colorName, $howMuchDarker: 0, $alpha: 1) {
+  // '$colorName' should be a valid color from '$colorList' in _autocomplete.scss
+  $colorName: checkIfColorNameIsValid($colorName);
+  // '$alpha' should be number in range [0-1]
+  $alpha: checkIfArgumentIsNumberInRange($alpha, 0, 1);
+  // '$howMuchDarker' should be number in range [0-100]
+  $howMuchDarker: checkIfArgumentIsNumberInRange($howMuchDarker, 0, 100);
+
+  @return unquote(
+    'hsla(var(--' + $colorName + '-hue), calc(var(--' + $colorName +
+      '-saturation) * 1%), calc((var(--' + $colorName + '-luminosity) - ' +
+      $howMuchDarker + ') * 1%), ' + $alpha + ')'
+  );
+}
+
+// ****************************************  UI Variables  **************************************** //
+// getVar
+// Function: takes the name of ui variable
+// Returns: the ui variable
+@function getVar($varName) {
+  // '$varName' should be a valid ui variable from '$varList' in _autocomplete.scss
+  $varName: checkIfUiVarIsValid($varName);
+
+  @return unquote('var(--' + $varName + ')');
+}
+
+// ****************************************  Helper function  **************************************** //
+// checkIfArgumentIsNumberInRange
+//! HELPER FUNCTION -- shouldn't be used outside of this file
+// Function: takes the argument that should be number and its minimum and maximum value
+// Returns: ERROR - if the argument is out of range or not a number / VALUE - if the argument is valid
+@function checkIfArgumentIsNumberInRange($arg, $min, $max) {
+  @if (type-of($arg) != number) {
+    @error ("'" + $arg + "' is not a number.");
+  } @else if ($arg > $max or $arg < $min) {
+    @error ("'" + $arg + "' is not within range [" + $min + "-" + $max +"].");
+  }
+
+  @return $arg;
+}
+
+// checkIfColorNameIsValid
+//! HELPER FUNCTION -- shouldn't be used outside of this file
+// Function: takes the color name
+// Returns: ERROR - if the color name is not string or if it isn't valid name* / VALUE - if the color name is valid
+// *Valid color name means that it exists in '$colorList' in '_autocomplete.scss'
+@function checkIfColorNameIsValid($colorName) {
+  @if (type-of($colorName) != string) {
+    @error ("'" + $colorName + "' is not a string.");
+  } @else if (list.index($colorList, $colorName) == null) {
+    @error ("'" + $colorName + "' is not a valid color name.");
+  }
+
+  @return $colorName;
+}
+
+// checkIfUiVarIsValid
+//! HELPER FUNCTION -- shouldn't be used outside of this file
+// Function: takes the ui variable name
+// Returns: ERROR - if the var name is not string or if it isn't valid* / VALUE - if the var name is valid
+// *Valid ui variable name means that it exists in '$varList' in '_autocomplete.scss'
+@function checkIfUiVarIsValid($varName) {
+  @if (type-of($varName) != string) {
+    @error ("'" + $varName + "' is not a string.");
+  } @else if (list.index($varList, $varName) == null) {
+    @error ("'" + $varName + "' is not a valid UI variable name.");
+  }
+
+  @return $varName;
+}
