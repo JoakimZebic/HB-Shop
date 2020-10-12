@@ -19,6 +19,15 @@ Static web shop that renders products from .json file
 
 • Fully responsive
 
+## Pages
+
+For now there are only 4 pages:
+
+* Welcome page
+* Shop page
+* Cart page
+* 404 page
+
 ## Theming
 
 In this project I tested my NEW design system for Angular + Angular Material that uses CSS Variables for dynamic themes.
