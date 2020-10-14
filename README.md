@@ -1,2 +1,1 @@
-# HB-Shop
-Check the 'master' branch
+# Check the 'master' branch
