@@ -37,8 +37,8 @@
   );
 }
 
-$theme-primary: generate-theme(primary, primary-contrast);
+$theme-primary: generate-theme(primary, primaryContrast);
 
-$theme-accent: generate-theme(accent, accent-contrast);
+$theme-accent: generate-theme(accent, accentContrast);
 
-$theme-error: generate-theme(error, error-contrast);
+$theme-error: generate-theme(error, errorContrast);

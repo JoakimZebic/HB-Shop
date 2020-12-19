@@ -1,5 +1,6 @@
 import { LocalStorageService } from './../../services/local-storage/local-storage.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { ThemeService } from 'src/assets/theme/theme.service';
 
 @Component({
   selector: 'hb-theme-switch',
@@ -10,25 +11,28 @@ export class ThemeSwitchComponent implements OnInit {
   @Input() style: string;
   darkMode = false;
 
-  constructor(private ls: LocalStorageService) {}
-
-  ngOnInit(): void {
+  constructor(private ls: LocalStorageService, private theme: ThemeService) {
     const themePref = this.ls.get('themePref');
-    if (themePref && themePref === 'dark') {
+
+    if (themePref) {
       this.darkMode = true;
-      document.documentElement.classList.add('dark');
+      this.theme.setThemeColor('dark');
+    } else {
+      this.theme.setThemeColor('light');
     }
   }
+
+  ngOnInit(): void {}
 
   toggleTheme(): void {
     if (this.darkMode) {
       this.darkMode = false;
       this.ls.delete('themePref');
-      document.documentElement.classList.remove('dark');
+      this.theme.setThemeColor('light');
     } else {
       this.darkMode = true;
       this.ls.add('themePref', 'dark');
-      document.documentElement.classList.add('dark');
+      this.theme.setThemeColor('dark');
     }
   }
 }
