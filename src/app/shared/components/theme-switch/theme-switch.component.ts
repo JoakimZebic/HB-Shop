@@ -17,6 +17,7 @@ export class ThemeSwitchComponent implements OnInit {
     if (themePref) {
       this.darkMode = true;
       this.theme.setThemeColor('dark');
+      document.querySelector('html').classList.add('dark');
     } else {
       this.theme.setThemeColor('light');
     }
@@ -29,10 +30,12 @@ export class ThemeSwitchComponent implements OnInit {
       this.darkMode = false;
       this.ls.delete('themePref');
       this.theme.setThemeColor('light');
+      document.querySelector('html').classList.remove('dark');
     } else {
       this.darkMode = true;
       this.ls.add('themePref', 'dark');
       this.theme.setThemeColor('dark');
+      document.querySelector('html').classList.add('dark');
     }
   }
 }
